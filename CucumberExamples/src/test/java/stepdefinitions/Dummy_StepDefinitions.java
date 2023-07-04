@@ -29,13 +29,12 @@ public class Dummy_StepDefinitions {
         endpoint = endpoint + "/" + params;
         System.out.println(endpoint);
     }
-    @When("Post request icin {string}, {string}, {string} bilgileri ile request body olusturulur")
+    @When("Request body {string},{string},{string} bilgileri ile olusturulur")
     public void createRequestBody(String name, String salary, String age) {
         requestBody = new JSONObject();
         requestBody.put("name", name);
         requestBody.put("salary", salary);
         requestBody.put("age", age);
-
     }
     @When("POST request gonderilir ve testleri yapmak icin response degerini kaydeder")
     public void doRequestAndSaveResponse() {
@@ -65,4 +64,10 @@ public class Dummy_StepDefinitions {
             assertEquals(expectedAge, responseJsonPath.getString("data.age"));
         }
     }
+    @When("PUT request gonderilir ve testleri yapmak icin response degeri kaydedilir")
+    public void doUpdateRequestAndSaveResponse() {
+        response = given().when().body(requestBody.toString()).put(endpoint);
+        response.prettyPrint();
+    }
+
 }
