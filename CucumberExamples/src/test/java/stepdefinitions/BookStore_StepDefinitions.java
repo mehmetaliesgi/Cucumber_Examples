@@ -16,7 +16,7 @@ import java.util.Map;
 public class BookStore_StepDefinitions {
 
     String USER_ID;
-    String USERNAME = "mehmetaliesgi";
+    String USERNAME;
     private static final String PASSWORD = "Test@123.";
     String BASE_URL;
 
