@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="3.779" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="End to end tests for ToolsQA's Book Store API" name="Authorized user is able to Add and Remove a book" time="3.62">
+<system-out><![CDATA[
+Given I am "USERNAME" an authorized user in the "BASE_URL" URL..............passed
+Given A list of books are available in the "BASE_URL".......................passed
+When I "USER_ID" add a book to my reading list int the "BASE_URL"...........passed
+Then The book is added......................................................passed
+When I remove a book from my reading list in the "BASE_URL".................passed
+Then The book is removed in the "BASE_URL"..................................passed
+]]></system-out>
+</testcase>
+</testsuite>
