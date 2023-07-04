@@ -69,5 +69,21 @@ public class Dummy_StepDefinitions {
         response = given().when().body(requestBody.toString()).put(endpoint);
         response.prettyPrint();
     }
+    @When("GET request gonderilir ve testleri yapmak icin response degeri kaydedilir")
+    public void get_request_gonderilir_ve_testleri_yapmak_icin_response_degeri_kaydedilir() {
+        response = given().when().get(endpoint);
+        response.prettyPrint();
+    }
+    @When("DELETE request gonderilir")
+    public void doDeleteRequest() {
+        response = given().when().delete(endpoint);
+        response.prettyPrint();
+    }
+    @When("response'da message degerinin {string} oldugu kontrol edilir")
+    public void assertMessage(String message) {
+        responseJsonPath = response.jsonPath();
+
+        assertEquals(message, responseJsonPath.getString("message"));
+    }
 
 }
